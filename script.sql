@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`User` (
 	`userID` INT NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(100) NOT NULL,
     `email`  VARCHAR(50) NOT NULL,
-    `role` enum('admin','lecturer','student') NOT NULL,
+    `role` enum('admin','lecturer','student') DEFAULT 'student' NOT NULL,
     `createdOn` datetime not null default current_timestamp ,
     `updatedOn` datetime not null default current_timestamp on update current_timestamp ,
     PRIMARY KEY(`userID`),
