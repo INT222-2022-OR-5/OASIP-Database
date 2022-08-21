@@ -118,3 +118,6 @@ VALUES ('Komkrid Rakdee','komkrid.rak@mail.kmutt.ac.th','student','2022-08-08 15
 
 INSERT INTO user (name,email,role,createdOn,updatedOn)
 VALUES ('สมเกียรติ ขยันเรียน','somkiat.kay@kmutt.ac.th','student','2022-08-16 09:00:00+07:00','2022-08-16 09:00:00+07:00');
+
+INSERT INTO user (name,email,role)
+VALUES ('วงศกร แสงสุรศักดิ์','wong.saengsurasak@gmail.com','student');
