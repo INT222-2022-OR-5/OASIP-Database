@@ -107,17 +107,17 @@ VALUES (3,'สมเกียรติ ขยันเรียน กลุ่�
 
 -- user
 
-INSERT INTO user (name,email,role,createdOn,updatedOn)
+INSERT INTO User (name,email,role,createdOn,updatedOn)
 VALUES ('OASIP ADMIN','oasip.admin@kmutt.ac.th','admin','2022-08-01 00:00:00+07:00','2022-08-01 00:00:00+07:00');
 
-INSERT INTO user (name,email,role,createdOn,updatedOn)
+INSERT INTO User (name,email,role,createdOn,updatedOn)
 VALUES ('Somchai Jaidee','somchai.jai@kmutt.ac.th','lecturer','2022-08-08 15:00:00+07:00','2022-08-08 15:00:00+07:00');
 
-INSERT INTO user (name,email,role,createdOn,updatedOn)
+INSERT INTO User (name,email,role,createdOn,updatedOn)
 VALUES ('Komkrid Rakdee','komkrid.rak@mail.kmutt.ac.th','student','2022-08-08 15:00:01+07:00','2022-08-08 15:00:01+07:00');
 
-INSERT INTO user (name,email,role,createdOn,updatedOn)
+INSERT INTO User (name,email,role,createdOn,updatedOn)
 VALUES ('สมเกียรติ ขยันเรียน','somkiat.kay@kmutt.ac.th','student','2022-08-16 09:00:00+07:00','2022-08-16 09:00:00+07:00');
 
-INSERT INTO user (name,email,role)
+INSERT INTO User (name,email,role)
 VALUES ('วงศกร แสงสุรศักดิ์','wong.saengsurasak@gmail.com','student');
