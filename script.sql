@@ -66,6 +66,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`User` (
 	`userID` INT NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(100) NOT NULL,
     `email`  VARCHAR(50) NOT NULL,
+    `password` VARCHAR(100) NOT NULL,
     `role` enum('admin','lecturer','student') DEFAULT 'student' NOT NULL,
     `createdOn` datetime not null default current_timestamp ,
     `updatedOn` datetime not null default current_timestamp on update current_timestamp ,
@@ -107,17 +108,15 @@ VALUES (3,'สมเกียรติ ขยันเรียน กลุ่�
 
 -- user
 
-INSERT INTO User (name,email,role,createdOn,updatedOn)
-VALUES ('OASIP ADMIN','oasip.admin@kmutt.ac.th','admin','2022-08-01 00:00:00+07:00','2022-08-01 00:00:00+07:00');
+INSERT INTO user (name,email,role,password,createdOn,updatedOn)
+VALUES ('OASIP ADMIN','oasip.admin@kmutt.ac.th','admin','oasipadmin','2022-08-01 00:00:00+07:00','2022-08-01 00:00:00+07:00');
 
-INSERT INTO User (name,email,role,createdOn,updatedOn)
-VALUES ('Somchai Jaidee','somchai.jai@kmutt.ac.th','lecturer','2022-08-08 15:00:00+07:00','2022-08-08 15:00:00+07:00');
+INSERT INTO user (name,email,role,password,createdOn,updatedOn)
+VALUES ('Somchai Jaidee','somchai.jai@kmutt.ac.th','lecturer','somchaijai','2022-08-08 15:00:00+07:00','2022-08-08 15:00:00+07:00');
 
-INSERT INTO User (name,email,role,createdOn,updatedOn)
-VALUES ('Komkrid Rakdee','komkrid.rak@mail.kmutt.ac.th','student','2022-08-08 15:00:01+07:00','2022-08-08 15:00:01+07:00');
+INSERT INTO user (name,email,role,password,createdOn,updatedOn)
+VALUES ('Komkrid Rakdee','komkrid.rak@mail.kmutt.ac.th','student','komkridrak','2022-08-08 15:00:01+07:00','2022-08-08 15:00:01+07:00');
 
-INSERT INTO User (name,email,role,createdOn,updatedOn)
-VALUES ('สมเกียรติ ขยันเรียน','somkiat.kay@kmutt.ac.th','student','2022-08-16 09:00:00+07:00','2022-08-16 09:00:00+07:00');
+INSERT INTO user (name,email,role,password,createdOn,updatedOn)
+VALUES ('สมเกียรติ ขยันเรียน','somkiat.kay@kmutt.ac.th','student','somkiat.kay','2022-08-16 09:00:00+07:00','2022-08-16 09:00:00+07:00');
 
-INSERT INTO User (name,email,role)
-VALUES ('วงศกร แสงสุรศักดิ์','wong.saengsurasak@gmail.com','student');
