@@ -109,14 +109,14 @@ VALUES (3,'สมเกียรติ ขยันเรียน กลุ่�
 -- user
 
 INSERT INTO user (name,email,role,password,createdOn,updatedOn)
-VALUES ('OASIP ADMIN','oasip.admin@kmutt.ac.th','admin','oasipadmin','2022-08-01 00:00:00+07:00','2022-08-01 00:00:00+07:00');
+VALUES ('OASIP ADMIN','oasip.admin@kmutt.ac.th','admin','$argon2id$v=19$m=4096,t=3,p=1$sYXzbUOqBoHY1NfhJ8cjnw$H6+adWySiFPgcUogJK3hEhcF6Y4fusy7tcXYEL+f0cQ','2022-08-01 00:00:00+07:00','2022-08-01 00:00:00+07:00');
 
 INSERT INTO user (name,email,role,password,createdOn,updatedOn)
-VALUES ('Somchai Jaidee','somchai.jai@kmutt.ac.th','lecturer','somchaijai','2022-08-08 15:00:00+07:00','2022-08-08 15:00:00+07:00');
+VALUES ('Somchai Jaidee','somchai.jai@kmutt.ac.th','lecturer','$argon2id$v=19$m=4096,t=3,p=1$dmsOy7LPTjmooPu+P2oTZA$NZFTFd3f0K1Sp19aaUwyn3jgiy15yFcXhp8E4/1yXoI','2022-08-08 15:00:00+07:00','2022-08-08 15:00:00+07:00');
 
 INSERT INTO user (name,email,role,password,createdOn,updatedOn)
-VALUES ('Komkrid Rakdee','komkrid.rak@mail.kmutt.ac.th','student','komkridrak','2022-08-08 15:00:01+07:00','2022-08-08 15:00:01+07:00');
+VALUES ('Komkrid Rakdee','komkrid.rak@mail.kmutt.ac.th','student','$argon2id$v=19$m=4096,t=3,p=1$8W61ZOC5RU7sJP5kKRbSqg$OLwZNPeMqxp+g0Vbn+odcA47XMClFN+IswTueVah7F0','2022-08-08 15:00:01+07:00','2022-08-08 15:00:01+07:00');
 
 INSERT INTO user (name,email,role,password,createdOn,updatedOn)
-VALUES ('สมเกียรติ ขยันเรียน','somkiat.kay@kmutt.ac.th','student','somkiat.kay','2022-08-16 09:00:00+07:00','2022-08-16 09:00:00+07:00');
+VALUES ('สมเกียรติ ขยันเรียน','somkiat.kay@kmutt.ac.th','student','$argon2id$v=19$m=4096,t=3,p=1$gBqgjspF45FcIKQEw8GmaQ$alrOCZ0YrDqOu8/aZiLDMGZo4vFkSEAXA0YoHhY0BDQ','2022-08-16 09:00:00+07:00','2022-08-16 09:00:00+07:00');
 
