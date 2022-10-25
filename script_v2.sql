@@ -124,18 +124,6 @@ VALUES (4,'Client-side Clinic', 'ตารางนัดหมายนี้�
 INSERT INTO EventCategory (eventCategoryID,eventCategoryName,eventCategoryDescription,eventDuration)
 VALUES (5,'Server-side Clinic', NULL, 30);
 
--- event
-use mydb;
-
-INSERT INTO Event (eventId,bookingName,bookingEmail,eventStartTime,eventDuration,eventNotes,eventCategoryId,userId)
-VALUES (1, 'Somchai Jaidee(OR-7)', 'somchai.jai@mail.kmutt.ac.th', '2022-05-23 13:30:00', 30, NULL, 2, 7);
-
-INSERT INTO Event (eventId,bookingName,bookingEmail,eventStartTime,eventDuration,eventNotes,eventCategoryId,userId)
-VALUES (2, 'Somsri Rakdee(SJ-3)', 'somsri.rak@mail.kmutt.ac.th', '2022-04-27 09:30:00', 30, 'ขอปรึกษาปัญหาเพื่อนไม่ช่วยงาน ', 1, NULL);
-
-INSERT INTO Event (eventId,bookingName,bookingEmail,eventStartTime,eventDuration,eventNotes,eventCategoryId,userId)
-VALUES (3,'สมเกียรติ ขยันเรียน กลุ่ม TT-4','somkiat.kay@kmutt.ac.th','2022-05-23 16:30:00', 15, NULL , 3, 9);
-
 -- user
 use mydb;
 
@@ -169,3 +157,15 @@ VALUES (9, 'สมเกียรติ ขยันเรียน','somkiat.ka
 -- eventcategory_owner
 INSERT INTO CategoryOwner (eventCategoryId,userId)
 VALUES (1,2),(2,2),(2,5),(3,6),(4,4),(5,3),(5,2);
+
+-- event
+use mydb;
+
+INSERT INTO Event (eventId,bookingName,bookingEmail,eventStartTime,eventDuration,eventNotes,eventCategoryId,userId)
+VALUES (1, 'Somchai Jaidee(OR-7)', 'somchai.jai@mail.kmutt.ac.th', '2022-05-23 13:30:00', 30, NULL, 2, 7);
+
+INSERT INTO Event (eventId,bookingName,bookingEmail,eventStartTime,eventDuration,eventNotes,eventCategoryId,userId)
+VALUES (2, 'Somsri Rakdee(SJ-3)', 'somsri.rak@mail.kmutt.ac.th', '2022-04-27 09:30:00', 30, 'ขอปรึกษาปัญหาเพื่อนไม่ช่วยงาน ', 1, NULL);
+
+INSERT INTO Event (eventId,bookingName,bookingEmail,eventStartTime,eventDuration,eventNotes,eventCategoryId,userId)
+VALUES (3,'สมเกียรติ ขยันเรียน กลุ่ม TT-4','somkiat.kay@kmutt.ac.th','2022-05-23 16:30:00', 15, NULL , 3, 9);
