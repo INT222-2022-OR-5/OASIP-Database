@@ -89,16 +89,15 @@ CREATE TABLE IF NOT EXISTS `mydb`.`CategoryOwner` (
   INDEX `fk_user_has_eventcategory_user1_idx` (`userId` ASC) VISIBLE,
   CONSTRAINT `fk_user_has_eventcategory_user1`
     FOREIGN KEY (`userId`)
-    REFERENCES `mydb`.`user` (`userId`)
+    REFERENCES `mydb`.`User` (`userId`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_user_has_eventcategory_eventcategory1`
     FOREIGN KEY (`eventCategoryId`)
-    REFERENCES `mydb`.`eventcategory` (`eventCategoryId`)
+    REFERENCES `mydb`.`EventCategory` (`eventCategoryId`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
@@ -155,6 +154,8 @@ INSERT INTO User (userID,name,email,role,password,createdOn,updatedOn)
 VALUES (9, 'สมเกียรติ ขยันเรียน','somkiat.kay@kmutt.ac.th','student','$argon2id$v=19$m=4096,t=3,p=1$gBqgjspF45FcIKQEw8GmaQ$alrOCZ0YrDqOu8/aZiLDMGZo4vFkSEAXA0YoHhY0BDQ','2022-08-16 09:00:00+07:00','2022-08-16 09:00:00+07:00');
 
 -- eventcategory_owner
+SET FOREIGN_KEY_CHECKS=0;
+
 INSERT INTO CategoryOwner (eventCategoryId,userId)
 VALUES (1,2),(2,2),(2,5),(3,6),(4,4),(5,3),(5,2);
 
