@@ -23,12 +23,13 @@ DROP TABLE IF EXISTS `mydb`.`EventCategory` ;
 CREATE TABLE IF NOT EXISTS `mydb`.`EventCategory` (
   `eventCategoryId` INT NOT NULL AUTO_INCREMENT,
   `eventCategoryName` VARCHAR(100) NOT NULL,
-  `eventCategoryDescription` VARCHAR(500) NULL,
+  `eventCategoryDescription` TEXT(500) NULL DEFAULT NULL,
   `eventDuration` INT NOT NULL,
   PRIMARY KEY (`eventCategoryId`),
-  UNIQUE INDEX `eventCategoryName_UNIQUE` (`eventCategoryName` ASC) VISIBLE)
-ENGINE = InnoDB CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
+  UNIQUE INDEX `eventCategoryName_UNIQUE` (`eventCategoryName` ASC) VISIBLE,
+  UNIQUE INDEX `eventCategoryId_UNIQUE` (`eventCategoryId` ASC) VISIBLE)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`Event`
@@ -37,25 +38,25 @@ DROP TABLE IF EXISTS `mydb`.`Event` ;
 
 CREATE TABLE IF NOT EXISTS `mydb`.`Event` (
   `eventId` INT NOT NULL AUTO_INCREMENT,
+  `eventCategoryId` INT NOT NULL,
+  `userId` INT NULL,
   `bookingName` VARCHAR(100) NOT NULL,
   `bookingEmail` VARCHAR(100) NOT NULL,
   `eventStartTime` DATETIME NOT NULL,
   `eventDuration` INT NOT NULL,
-  `eventNotes` VARCHAR(500) NULL,
-  `eventCategoryId` INT NOT NULL,
-  `userId` INT NULL,
+  `eventNotes` TEXT(500) NULL DEFAULT NULL,
   PRIMARY KEY (`eventId`),
   INDEX `fk_Event_EventCategory_idx` (`eventCategoryId` ASC) VISIBLE,
   INDEX `fk_Event_User_idx` (`userId` ASC) VISIBLE,
   CONSTRAINT `fk_Event_EventCategory`
     FOREIGN KEY (`eventCategoryId`)
-    REFERENCES `mydb`.`EventCategory` (`eventCategoryId`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    REFERENCES `mydb`.`EventCategory` (`eventCategoryId`),
   CONSTRAINT `fk_Event_User`
     FOREIGN KEY (`userId`)
     REFERENCES `mydb`.`User` (`userId`))
-ENGINE = InnoDB CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+ENGINE = InnoDB
+AUTO_INCREMENT = 28
+DEFAULT CHARACTER SET = utf8mb3;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`User`
@@ -63,18 +64,17 @@ ENGINE = InnoDB CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 DROP TABLE IF EXISTS `mydb`.`User` ;
 
 CREATE TABLE IF NOT EXISTS `mydb`.`User` (
-	`userID` INT NOT NULL AUTO_INCREMENT,
-    `name` VARCHAR(100) NOT NULL,
-    `email`  VARCHAR(50) NOT NULL,
-    `password` VARCHAR(100) NOT NULL,
-    `role` enum('admin','lecturer','student') DEFAULT 'student' NOT NULL,
-    `createdOn` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
-    `updatedOn` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP ,
-    PRIMARY KEY(`userID`),
-    UNIQUE INDEX `username_UNIQUE` (`name` ASC) VISIBLE,
-	UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE)
-ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
+  `userId` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `email` VARCHAR(50) NOT NULL,
+  `password` VARCHAR(100) NOT NULL,
+  `role` ENUM('admin', 'lecturer', 'student') DEFAULT 'student' NOT NULL,
+  `createdOn` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedOn` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`userId`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 80
+DEFAULT CHARACTER SET = utf8mb3;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`CategoryOwner`
@@ -97,8 +97,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`CategoryOwner` (
     REFERENCES `mydb`.`EventCategory` (`eventCategoryId`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
